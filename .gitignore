@@ -7,17 +7,32 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
-!/log/.keep
-!/tmp/.keep
+/log/.keep
+/tmp/.keep
 
 # Ignore uploaded files in development
-/storage/*
-!/storage/.keep
+# /storage/*
+/storage/.keep
 
 .byebug_history
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
+/config/database.yml
+/config/credentials.yml.enc
+/coverage
+db/schema.rb
+.DS_Store
+
+
+#ignore active storage files
+/storage
+/tmp
+/package-lock.json
