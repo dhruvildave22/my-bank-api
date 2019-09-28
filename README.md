@@ -7,9 +7,12 @@
 * rails db:migrate
 * rails s 
 
-* after these open these linkto get the api
+* after these open these link to get the api
 
 * localhost:3000/users
 * localhost:3000/accounts
 * localhost:3000/transactions
+
+* to use it in production you can use 
+* https://dhruvil-bank-api.herokuapp.com
 
