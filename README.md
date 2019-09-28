@@ -1,25 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To use this api clone this project
+git clone https://github.com/dhruvildave22/my-bank-api.git
+bundle
+rails db:create
+rails db:migrate
+rails s 
 
-Things you may want to cover:
+after these open these linkto get the api
 
-* Ruby version
+localhost:3000/users
+localhost:3000/accounts
+localhost:3000/transactions
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# my-bank-api
