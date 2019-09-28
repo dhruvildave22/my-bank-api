@@ -7,7 +7,7 @@ class Account < ApplicationRecord
   before_validation :set_default
 
   def withdraw(amount)
-    update(balance: balance - amount)  
+    update(balance: balance - amount)
   end
 
   def deposit(amount)
