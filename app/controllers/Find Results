@@ -1,0 +1,23 @@
+Searching 1368 files for "deposit"
+
+/Users/dhruvildave/Desktop/my-bank-api/app/models/account.rb:
+    9    end
+   10  
+   11:   def deposit amount
+   12      self.update(balance: balance+amount)
+   13    end
+
+/Users/dhruvildave/Desktop/my-bank-api/app/models/transaction.rb:
+   11      ActiveRecord::Base.transaction do
+   12        self.sender_account.withdraw(amount)
+   13:       self.receiver_account.deposit(amount)
+   14      end
+   15    end
+
+/Users/dhruvildave/Desktop/my-bank-api/tmp/cache/bootsnap-compile-cache/f4/fcc5d077110ac3:
+    <binary>
+
+/Users/dhruvildave/Desktop/my-bank-api/tmp/cache/bootsnap-compile-cache/ff/b9a5c5ab5356ae:
+    <binary>
+
+4 matches across 4 files
