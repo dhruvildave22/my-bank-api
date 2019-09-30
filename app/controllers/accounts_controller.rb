@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class AccountsController < ApplicationController
+  before_action :exist, only: %i[verify_account]
   def index
     accounts = Account.all
     render json: { accounts: accounts }, status: :ok
@@ -17,11 +18,15 @@ class AccountsController < ApplicationController
   end
 
   def verify_account
-    account = Account.find_by(account_number_param)
-    render json: { account: account }, status: :ok
+    render json: { account: @account }, status: :ok
   end
 
   private
+
+  def exist
+    @account = Account.find_by(account_number_param)
+    render json: { error: 'Account is not available' }, status: :not_found unless @account.present?
+  end
 
   def account_number_param
     params.require(:account).permit(:number)
