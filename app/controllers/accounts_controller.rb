@@ -24,12 +24,8 @@ class AccountsController < ApplicationController
   private
 
   def exist
-    @account = Account.find_by(account_number_param)
+    @account = Account.find_by(number: params[:number])
     render json: { error: 'Account is not available' }, status: :not_found unless @account.present?
-  end
-
-  def account_number_param
-    params.require(:account).permit(:number)
   end
 
   def account_params

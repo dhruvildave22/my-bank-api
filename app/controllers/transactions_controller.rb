@@ -23,15 +23,11 @@ class TransactionsController < ApplicationController
   private
 
   def exist
-    @transaction = Transaction.find_by(transaction_number_param)
+    @transaction = Transaction.find_by(transaction_number: params[:transaction_number])
     render json: { error: 'Transaction is not available' }, status: :not_found unless @transaction.present?
   end
 
   def transaction_params
-    params.require(:transaction).permit(:sender_account_number, :receiver_account_number, :amount)
-  end
-
-  def transaction_number_param
-    params.require(:transaction).permit(:transaction_number)
+    params.require(:transaction).permit(:sender_account_number, :receiver_account_number, :amount, :transaction_number)
   end
 end
